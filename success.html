@@ -4,8 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Compra Exitosa! — Olga IMA Teacher</title>
-  <meta name="robots" content="noindex, nofollow">
+  <title>Olga IMA Teacher — Formación Profesional en Masaje | España</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Formación profesional en masaje con base fisiológica real. Cursos online de 4D Body Massage, técnicas avanzadas y certificación IMA. Más de 25 años de experiencia.">
+  <meta name="keywords"
+    content="curso masaje España, formación masajista, masaje profesional, 4D Body Massage, IMA Teacher, Olga Solonyna, curso online masaje, fisiología masaje, técnicas masaje">
+  <meta name="author" content="Olga Solonyna">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.example.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:title" content="Olga IMA Teacher — Formación Profesional en Masaje">
+  <meta property="og:description"
+    content="Transforma tu carrera con técnicas de masaje basadas en fisiología real. Cursos online con certificación IMA. +25 años de experiencia.">
+  <meta property="og:image" content="https://i.ibb.co/vC6mHv8w/5929252079719354050.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Olga IMA Teacher">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.example.com/">
+  <meta name="twitter:title" content="Olga IMA Teacher — Formación Profesional en Masaje">
+  <meta name="twitter:description"
+    content="Transforma tu carrera con técnicas de masaje basadas en fisiología real. Cursos online con certificación IMA.">
+  <meta name="twitter:image" content="https://i.ibb.co/vC6mHv8w/5929252079719354050.jpg">
+
+  <!-- Additional SEO -->
+  <meta name="geo.region" content="ES">
+  <meta name="geo.placename" content="España">
+  <meta name="language" content="Spanish">
+  <meta name="revisit-after" content="7 days">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,12 +154,21 @@
       pointer-events: none;
     }
 
-    /* Text gradient */
-    .text-gradient {
-      background: linear-gradient(135deg, #d4a574 0%, #e8c9a8 50%, #d4a574 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glow effect */
+    .glow {
+      box-shadow: 0 0 60px rgba(212, 165, 116, 0.15);
     }
 
     /* Premium button hover */
@@ -149,6 +190,21 @@
       transform: translateX(100%);
     }
 
+    /* Card hover effect */
+    .course-card {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Image quality */
+    img {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+
     /* Glass morphism */
     .glass {
       background: rgba(255, 255, 255, 0.03);
@@ -156,166 +212,43 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* Success checkmark animation */
-    .checkmark-circle {
-      stroke-dasharray: 166;
-      stroke-dashoffset: 166;
-      stroke-width: 2;
-      stroke-miterlimit: 10;
-      stroke: #d4a574;
-      fill: none;
-      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #d4a574 0%, #e8c9a8 50%, #d4a574 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .checkmark {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: block;
-      stroke-width: 3;
-      stroke: #d4a574;
-      stroke-miterlimit: 10;
-      margin: 0 auto;
-      box-shadow: 0 0 60px rgba(212, 165, 116, 0.3);
-    }
-
-    .checkmark-check {
-      transform-origin: 50% 50%;
-      stroke-dasharray: 48;
-      stroke-dashoffset: 48;
-      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-      100% {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    /* Confetti animation */
-    .confetti {
+    /* Line decoration */
+    .line-decoration::after {
+      content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #d4a574;
-      opacity: 0;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #d4a574, transparent);
     }
 
-    .confetti-1 {
-      animation: confetti-fall 3s ease-out 0.5s forwards;
-      left: 10%;
-    }
-
-    .confetti-2 {
-      animation: confetti-fall 3.5s ease-out 0.7s forwards;
-      left: 20%;
-      background: #e8c9a8;
-    }
-
-    .confetti-3 {
-      animation: confetti-fall 2.8s ease-out 0.6s forwards;
-      left: 30%;
-    }
-
-    .confetti-4 {
-      animation: confetti-fall 3.2s ease-out 0.8s forwards;
-      left: 40%;
-      background: #c4956a;
-    }
-
-    .confetti-5 {
-      animation: confetti-fall 3s ease-out 0.5s forwards;
-      left: 50%;
-    }
-
-    .confetti-6 {
-      animation: confetti-fall 3.3s ease-out 0.9s forwards;
-      left: 60%;
-      background: #e8c9a8;
-    }
-
-    .confetti-7 {
-      animation: confetti-fall 2.9s ease-out 0.55s forwards;
-      left: 70%;
-    }
-
-    .confetti-8 {
-      animation: confetti-fall 3.1s ease-out 0.75s forwards;
-      left: 80%;
-      background: #c4956a;
-    }
-
-    .confetti-9 {
-      animation: confetti-fall 3.4s ease-out 0.65s forwards;
-      left: 90%;
-    }
-
-    @keyframes confetti-fall {
+    /* Marquee animation */
+    @keyframes marquee {
       0% {
-        opacity: 1;
-        top: -10%;
-        transform: rotate(0deg) scale(1);
+        transform: translateX(0);
       }
 
       100% {
-        opacity: 0;
-        top: 100%;
-        transform: rotate(720deg) scale(0.5);
+        transform: translateX(-50%);
       }
     }
 
-    /* Pulse animation for button */
-    @keyframes pulse-gold {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.4);
-      }
-
-      50% {
-        box-shadow: 0 0 0 20px rgba(212, 165, 116, 0);
-      }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
     }
 
-    .pulse-gold {
-      animation: pulse-gold 2s infinite;
-    }
-
-    /* Fade in animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .delay-1 {
-      animation-delay: 0.3s;
-      opacity: 0;
-    }
-
-    .delay-2 {
-      animation-delay: 0.5s;
-      opacity: 0;
-    }
-
-    .delay-3 {
-      animation-delay: 0.7s;
-      opacity: 0;
-    }
-
-    .delay-4 {
-      animation-delay: 0.9s;
-      opacity: 0;
+    /* Pronto card blurred background */
+    .pronto-card-bg {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
     }
   </style>
 </head>
@@ -332,122 +265,1815 @@
   <!-- Grid Pattern Overlay -->
   <div class="fixed inset-0 grid-pattern pointer-events-none -z-10"></div>
 
-  <!-- Confetti -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden z-10">
-    <div class="confetti confetti-1"></div>
-    <div class="confetti confetti-2"></div>
-    <div class="confetti confetti-3"></div>
-    <div class="confetti confetti-4"></div>
-    <div class="confetti confetti-5"></div>
-    <div class="confetti confetti-6"></div>
-    <div class="confetti confetti-7"></div>
-    <div class="confetti confetti-8"></div>
-    <div class="confetti confetti-9"></div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="min-h-screen flex items-center justify-center hero-gradient noise px-6 py-12">
-    <div class="max-w-2xl mx-auto text-center">
-
-      <!-- Success Checkmark -->
-      <div class="mb-10">
-        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
-          <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-        </svg>
-      </div>
-
-      <!-- Heading -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif leading-tight mb-6 fade-in-up delay-1">
-        ¡Gracias por tu <span class="text-gradient">compra!</span>
-      </h1>
-
-      <!-- Subheading -->
-      <p class="text-white/60 text-lg lg:text-xl leading-relaxed max-w-lg mx-auto mb-8 fade-in-up delay-2">
-        Tu pago ha sido procesado correctamente. Ahora solo falta un último paso para acceder a tu curso.
-      </p>
-
-      <!-- Instructions Card -->
-      <div class="glass rounded-3xl p-8 mb-10 fade-in-up delay-3">
-        <div class="flex items-center justify-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-[#d4a574]/20 flex items-center justify-center">
-            <span class="text-[#d4a574] font-bold text-lg">1</span>
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="group flex items-center gap-3">
+          <img src="logo_final.jpg" alt="Olga"
+            class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-[#d4a574]/50 shadow-lg shadow-[#d4a574]/20">
+          <div class="flex flex-col">
+            <span class="text-lg md:text-xl font-medium tracking-tight leading-tight">Olga Solonyna</span>
+            <span class="text-[#d4a574] text-xs md:text-sm font-serif italic">IMA Teacher</span>
           </div>
-          <span class="text-white/80 text-lg">Siguiente paso</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#about"
+            class="px-5 py-2.5 text-sm text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/5">La
+            Mentora</a>
+          <a href="#courses"
+            class="px-5 py-2.5 text-sm text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/5">Cursos</a>
+          <a href="#contact"
+            class="ml-4 px-6 py-2.5 bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-[#d4a574]/20 transition-all duration-300 btn-premium">
+            Contacto
+          </a>
         </div>
 
-        <h3 class="font-serif text-2xl text-white mb-4">Escríbenos por Instagram</h3>
-
-        <p class="text-white/60 mb-6 leading-relaxed">
-          Para recibir tu acceso al curso, envíanos un mensaje directo a nuestro Instagram con tu <strong
-            class="text-white">email de pago</strong>. Te responderemos lo antes posible con las instrucciones de
-          acceso.
-        </p>
-
-        <div class="bg-white/5 rounded-2xl p-5 mb-6 border border-white/10">
-          <p class="text-white/50 text-sm mb-2">El mensaje se enviará automáticamente:</p>
-          <p class="text-white/80 italic">"¡Hola! He realizado el pago del curso. Mi email es: [tu email]"</p>
-        </div>
-
-        <!-- Instagram Button -->
-        <a href="https://ig.me/m/experta_en_masaje?text=%C2%A1Hola!%20He%20realizado%20el%20pago%20del%20curso.%20Mi%20email%20es%3A%20"
-          target="_blank"
-          class="group inline-flex items-center justify-center gap-4 w-full px-8 py-5 bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] font-bold rounded-full hover:shadow-xl hover:shadow-[#d4a574]/30 transition-all duration-300 btn-premium pulse-gold text-lg">
-          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-          </svg>
-          Escribir a @experta_en_masaje
-          <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Additional Info -->
-      <div class="fade-in-up delay-4">
-        <p class="text-white/40 text-sm mb-4">
-          Si tienes algún problema, contáctanos por WhatsApp:
-        </p>
-        <a href="https://wa.me/34624464930" target="_blank"
-          class="inline-flex items-center gap-2 text-[#25D366] hover:text-[#25D366]/80 transition-colors">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-          </svg>
-          +34 624 464 930
-        </a>
-      </div>
-
-      <!-- Back to Home -->
-      <div class="mt-12 fade-in-up delay-4">
-        <a href="index.html"
-          class="inline-flex items-center gap-2 text-white/40 hover:text-white/60 transition-colors text-sm">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Volver a la página principal
-        </a>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+          class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+          <span class="w-5 h-0.5 bg-white rounded-full transition-all"></span>
+          <span class="w-5 h-0.5 bg-white rounded-full transition-all"></span>
+        </button>
       </div>
     </div>
-  </main>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-xl transform translate-x-full transition-transform duration-500 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#about" onclick="closeMobileMenu()"
+        class="text-3xl font-serif text-white/80 hover:text-[#d4a574] transition-colors">La Mentora</a>
+      <a href="#courses" onclick="closeMobileMenu()"
+        class="text-3xl font-serif text-white/80 hover:text-[#d4a574] transition-colors">Cursos</a>
+      <a href="#contact" onclick="closeMobileMenu()"
+        class="text-3xl font-serif text-white/80 hover:text-[#d4a574] transition-colors">Contacto</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="relative min-h-screen flex items-center hero-gradient noise pt-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Text Content -->
+        <div class="order-2 lg:order-1 reveal">
+          <div class="inline-flex items-center gap-3 mb-8">
+            <span class="w-12 h-px bg-gradient-to-r from-[#d4a574] to-transparent"></span>
+            <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">Formación Científica</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-serif leading-[1.1] mb-8">
+            Masaje con base
+            <span class="block text-gradient italic mt-2">fisiológica real.</span>
+          </h1>
+
+          <p class="text-white/60 text-lg lg:text-xl leading-relaxed max-w-lg mb-12 font-light">
+            Transforma tu carrera con técnicas basadas en la funcionalidad del organismo. Sin misticismos, solo anatomía
+            aplicada y resultados tangibles.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#courses"
+              class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] font-semibold rounded-full hover:shadow-xl hover:shadow-[#d4a574]/20 transition-all duration-300 btn-premium">
+              Ver Formaciones
+              <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="#about"
+              class="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white/5 hover:border-[#d4a574]/50 transition-all duration-300">
+              Sobre Olga
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex gap-12 mt-16 pt-8 border-t border-white/10">
+            <div>
+              <span class="text-4xl font-serif text-gradient">25+</span>
+              <p class="text-white/40 text-sm mt-1">Años de experiencia</p>
+            </div>
+            <div>
+              <span class="text-4xl font-serif text-gradient">500+</span>
+              <p class="text-white/40 text-sm mt-1">Alumnos formados</p>
+            </div>
+            <div class="hidden sm:block">
+              <span class="text-4xl font-serif text-gradient">IMA</span>
+              <p class="text-white/40 text-sm mt-1">Certificación</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="order-1 lg:order-2 reveal" style="transition-delay: 200ms">
+          <div class="relative">
+            <!-- Main Image -->
+            <div class="relative rounded-3xl overflow-hidden glow">
+              <div class="aspect-[4/5] lg:aspect-[3/4]">
+                <img id="hero-image" src="hero_final.jpg" alt="Masaje Terapéutico" class="w-full h-full object-cover">
+              </div>
+              <!-- Gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60">
+              </div>
+            </div>
+
+            <!-- Floating Card -->
+            <div class="absolute -bottom-6 -left-6 lg:-left-12 glass rounded-2xl p-6 max-w-[220px] hidden md:block">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4a574] to-[#c4956a] flex items-center justify-center">
+                  <svg class="w-6 h-6 text-[#0a0a0a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-serif text-2xl text-white">Campeona</p>
+                  <p class="text-xs text-white/50">de Masaje Profesional</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative elements -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 border border-[#d4a574]/20 rounded-full hidden lg:block">
+            </div>
+            <div class="absolute top-1/2 -right-8 w-16 h-16 bg-[#d4a574]/10 rounded-full blur-xl hidden lg:block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-white/30 text-xs tracking-widest uppercase">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-[#d4a574] to-transparent"></div>
+    </div>
+  </header>
+
+  <!-- Marquee Section -->
+  <div class="py-6 border-y border-white/5 bg-[#0a0a0a]/50 overflow-hidden">
+    <div class="flex animate-marquee whitespace-nowrap">
+      <span class="mx-8 text-white/20 text-sm tracking-[0.3em] uppercase">Fisiología • Anatomía • Técnica • Precisión •
+        Resultados • Profesionalismo • Excelencia • </span>
+      <span class="mx-8 text-white/20 text-sm tracking-[0.3em] uppercase">Fisiología • Anatomía • Técnica • Precisión •
+        Resultados • Profesionalismo • Excelencia • </span>
+      <span class="mx-8 text-white/20 text-sm tracking-[0.3em] uppercase">Fisiología • Anatomía • Técnica • Precisión •
+        Resultados • Profesionalismo • Excelencia • </span>
+      <span class="mx-8 text-white/20 text-sm tracking-[0.3em] uppercase">Fisiología • Anatomía • Técnica • Precisión •
+        Resultados • Profesionalismo • Excelencia • </span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 lg:py-32 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+        <!-- Image -->
+        <div class="relative reveal">
+          <div class="relative rounded-3xl overflow-hidden">
+            <div class="aspect-[4/5]">
+              <img id="profile-image" src="https://i.ibb.co/jkhnsfSb/5929252079719354038.jpg" alt="Olga Solonyna"
+                class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent"></div>
+          </div>
+
+          <!-- Decorative frame -->
+          <div class="absolute -inset-4 border border-[#d4a574]/10 rounded-3xl -z-10"></div>
+          <div class="absolute -inset-8 border border-[#d4a574]/5 rounded-3xl -z-10 hidden lg:block"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="reveal" style="transition-delay: 200ms">
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-[#d4a574]"></span>
+            <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">La Mentora</span>
+          </div>
+
+          <h2 class="text-4xl lg:text-5xl font-serif mb-8">
+            Hola, soy <span class="text-gradient">Olga.</span>
+          </h2>
+
+          <div class="space-y-6 text-white/70 text-lg font-light leading-relaxed">
+            <p>
+              Soy <strong class="text-white font-medium">Olga Solonyna</strong>, IMA Teacher, campeona de masaje,
+              masajista profesional con más de 25 años de experiencia práctica.
+            </p>
+            <p>
+              Trabajo y enseño desde una base científica: fisiología, funcionalidad del organismo y observación real del
+              cuerpo.
+            </p>
+          </div>
+
+          <!-- Quote -->
+          <div class="mt-10 p-8 glass rounded-2xl relative">
+            <svg class="absolute top-6 left-6 w-8 h-8 text-[#d4a574]/20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p class="text-white/90 text-lg italic pl-8 font-serif">
+              "No realizo ni enseño masajes energéticos. Mi enfoque es técnico, claro y aplicable en la práctica
+              diaria."
+            </p>
+          </div>
+
+          <!-- Features -->
+          <div class="grid grid-cols-2 gap-6 mt-10">
+            <div
+              class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#d4a574]/20 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-[#d4a574]/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-[#d4a574]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h4 class="font-serif text-xl text-white mb-1">Científico</h4>
+              <p class="text-sm text-white/50">Base fisiológica comprobada</p>
+            </div>
+            <div
+              class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#d4a574]/20 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-[#d4a574]/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-[#d4a574]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h4 class="font-serif text-xl text-white mb-1">Técnico</h4>
+              <p class="text-sm text-white/50">Metodología precisa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="py-24 lg:py-32 relative">
+    <!-- Background decoration -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-transparent via-[#d4a574]/[0.02] to-transparent pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative">
+      <!-- Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-[#d4a574]"></span>
+          <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">Formación Profesional</span>
+          <span class="w-8 h-px bg-[#d4a574]"></span>
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-serif mb-6">
+          Programas <span class="text-gradient">Disponibles</span>
+        </h2>
+        <p class="text-white/50 text-lg">Cursos diseñados para transformar tu práctica profesional</p>
+      </div>
+
+      <!-- Course Grid -->
+      <div id="lessons-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Content injected via JS -->
+      </div>
+
+      <!-- Pronto Card - Coming Soon -->
+      <div class="mt-8 reveal" style="transition-delay: 400ms">
+        <div class="course-card group cursor-pointer" onclick="openProntoModal()">
+          <div
+            class="relative bg-[#111111] rounded-3xl overflow-hidden border border-white/5 hover:border-[#d4a574]/30 transition-all duration-500">
+
+            <!-- Blurred Background Image Container -->
+            <div class="relative overflow-hidden aspect-[21/9]">
+              <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#111111]"></div>
+              <div class="absolute inset-0 backdrop-blur-xl"></div>
+
+              <!-- Animated orbs for visual interest -->
+              <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-[#d4a574]/10 rounded-full blur-3xl animate-pulse">
+              </div>
+              <div class="absolute bottom-1/4 right-1/4 w-40 h-40 bg-[#d4a574]/5 rounded-full blur-3xl animate-pulse"
+                style="animation-delay: 1s"></div>
+
+              <!-- Content -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                  <span
+                    class="inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-[0.3em] rounded-full mb-4">
+                    Próximamente
+                  </span>
+                  <h3
+                    class="font-serif text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-[#d4a574] transition-colors">
+                    Pronto
+                  </h3>
+                  <p class="text-white/50 mt-3 text-sm">4 nuevos cursos disponibles</p>
+                </div>
+              </div>
+
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-60">
+              </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="p-6 flex items-center justify-between">
+              <span
+                class="text-xs text-white/40 uppercase tracking-widest group-hover:text-white/60 transition-colors">Ver
+                cursos próximos</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574] transition-all duration-300">
+                <svg class="w-5 h-5 text-white/50 group-hover:text-[#0a0a0a] transition-colors" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#d4a574]/10 to-[#c4956a]/5"></div>
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center relative reveal">
+      <h2 class="text-3xl lg:text-5xl font-serif mb-6">
+        ¿Lista para transformar tu carrera?
+      </h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+        Únete a cientos de profesionales que ya han elevado su técnica con formación basada en ciencia real.
+      </p>
+      <a href="#courses"
+        class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] font-semibold rounded-full hover:shadow-xl hover:shadow-[#d4a574]/20 transition-all duration-300 btn-premium text-lg">
+        Explorar Cursos
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <a href="index.html" class="flex items-center justify-center gap-3 mb-4">
-        <img src="https://i.ibb.co/XrGpysSj/Whats-App-Image-2025-12-20-at-00-43-31.jpg" alt="Olga"
-          class="w-10 h-10 rounded-full object-cover border-2 border-[#d4a574]/50">
-        <div class="flex flex-col text-left">
-          <span class="text-sm font-medium leading-tight">Olga Solonyna</span>
-          <span class="text-[#d4a574] text-xs font-serif italic">IMA Teacher</span>
+  <footer id="contact" class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-3 mb-6">
+            <img src="https://i.ibb.co/XrGpysSj/Whats-App-Image-2025-12-20-at-00-43-31.jpg" alt="Olga"
+              class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-[#d4a574]/50 shadow-lg shadow-[#d4a574]/20">
+            <div class="flex flex-col">
+              <span class="text-lg md:text-xl font-medium leading-tight">Olga Solonyna</span>
+              <span class="text-[#d4a574] text-xs md:text-sm font-serif italic">IMA Teacher</span>
+            </div>
+          </a>
+          <p class="text-white/40 max-w-md leading-relaxed">
+            Fisiología, funcionalidad y excelencia técnica. Formación profesional en masaje basada en ciencia real.
+          </p>
         </div>
-      </a>
-      <p class="text-white/30 text-xs">&copy; 2024 Olga Solonyna. Todos los derechos reservados.</p>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-6">Navegación</h4>
+          <ul class="space-y-4">
+            <li><a href="#about" class="text-white/40 hover:text-[#d4a574] transition-colors">La Mentora</a></li>
+            <li><a href="#courses" class="text-white/40 hover:text-[#d4a574] transition-colors">Cursos</a></li>
+            <li><a href="#contact" class="text-white/40 hover:text-[#d4a574] transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold text-white mb-6">Conecta</h4>
+          <ul class="space-y-4">
+            <li>
+              <a href="https://www.instagram.com/experta_en_masaje?igsh=MTV2ZG5wcjhhbG54MA==" target="_blank"
+                class="inline-flex items-center gap-3 text-white/40 hover:text-[#d4a574] transition-colors group">
+                <div
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574]/10 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </div>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/34624464930" target="_blank"
+                class="inline-flex items-center gap-3 text-white/40 hover:text-[#d4a574] transition-colors group">
+                <div
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574]/10 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                </div>
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:gmail.com"
+                class="inline-flex items-center gap-3 text-white/40 hover:text-[#d4a574] transition-colors group">
+                <div
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574]/10 transition-colors">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                Email
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="pt-8 border-t border-white/5">
+        <!-- Legal Links -->
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-6">
+          <button onclick="openLegalModal('aviso-legal')"
+            class="text-white/30 hover:text-[#d4a574] text-xs transition-colors">
+            Aviso Legal
+          </button>
+          <span class="text-white/10">|</span>
+          <button onclick="openLegalModal('politica-privacidad')"
+            class="text-white/30 hover:text-[#d4a574] text-xs transition-colors">
+            Política de Privacidad
+          </button>
+          <span class="text-white/10">|</span>
+          <button onclick="openLegalModal('terminos-condiciones')"
+            class="text-white/30 hover:text-[#d4a574] text-xs transition-colors">
+            Términos y Condiciones
+          </button>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-white/30 text-sm">&copy; 2026 Olga Solonyna. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Full Screen Modal -->
+  <div id="modal-overlay" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-xl transition-opacity duration-500 opacity-0"
+      id="modal-backdrop" onclick="closeModal()"></div>
+
+    <!-- Modal Panel -->
+    <div
+      class="absolute inset-y-0 right-0 w-full md:w-[600px] bg-[#111111] shadow-2xl transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col border-l border-white/5"
+      id="modal-panel">
+
+      <!-- Close Button -->
+      <button onclick="closeModal()"
+        class="absolute top-6 right-6 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Image Header -->
+      <div class="relative h-[35vh] shrink-0 overflow-hidden">
+        <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/50 to-transparent"></div>
+        <div class="absolute bottom-8 left-8 right-8 text-white">
+          <span id="modal-tag"
+            class="inline-block px-4 py-1.5 bg-[#d4a574]/20 backdrop-blur-md border border-[#d4a574]/30 text-[#d4a574] text-[10px] uppercase tracking-widest font-bold rounded-full mb-4"></span>
+          <h3 id="modal-title" class="font-serif text-3xl md:text-4xl leading-tight"></h3>
+        </div>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-y-auto p-8 md:p-10">
+        <div class="flex justify-between items-baseline border-b border-white/10 pb-6 mb-8">
+          <span class="text-xs font-bold text-white/40 uppercase tracking-widest">Inversión</span>
+          <span id="modal-price" class="font-serif text-4xl text-gradient"></span>
+        </div>
+
+        <div id="modal-description" class="prose prose-invert prose-lg text-white/70 font-light leading-relaxed">
+          <!-- Dynamic Content -->
+        </div>
+      </div>
+
+      <!-- Sticky Footer -->
+      <div class="p-6 md:p-8 border-t border-white/10 bg-[#0a0a0a]">
+        <a id="modal-buy-link" href="#" target="_blank"
+          class="block w-full bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] text-center py-5 font-bold tracking-[0.15em] uppercase text-sm rounded-full hover:shadow-xl hover:shadow-[#d4a574]/20 transition-all duration-300 btn-premium">
+          Inscribirse al Curso
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pronto Modal - Coming Soon Courses -->
+  <div id="pronto-modal-overlay" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-[#0a0a0a]/90 backdrop-blur-xl transition-opacity duration-500 opacity-0"
+      id="pronto-modal-backdrop" onclick="closeProntoModal()"></div>
+
+    <!-- Modal Panel - Full Screen -->
+    <div
+      class="absolute inset-0 flex items-center justify-center p-4 md:p-8 opacity-0 scale-95 transition-all duration-500"
+      id="pronto-modal-panel">
+      <div
+        class="relative w-full max-w-6xl max-h-[90vh] bg-[#111111] rounded-3xl shadow-2xl border border-white/5 overflow-hidden flex flex-col">
+
+        <!-- Close Button -->
+        <button onclick="closeProntoModal()"
+          class="absolute top-6 right-6 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Header -->
+        <div class="p-8 md:p-10 border-b border-white/10 shrink-0">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="w-8 h-px bg-[#d4a574]"></span>
+            <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">Próximamente</span>
+          </div>
+          <h2 class="font-serif text-3xl md:text-4xl text-white">Cursos en <span
+              class="text-gradient">Preparación</span></h2>
+          <p class="text-white/50 mt-2">Nuevas formaciones que estarán disponibles pronto</p>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto p-8 md:p-10">
+          <div id="pronto-courses-container" class="grid md:grid-cols-2 gap-6">
+            <!-- Content injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating FAQ Button -->
+  <button onclick="openFaqModal()"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-[#d4a574] to-[#c4956a] rounded-full shadow-lg shadow-[#d4a574]/30 flex items-center justify-center hover:shadow-xl hover:shadow-[#d4a574]/40 hover:scale-110 transition-all duration-300 group">
+    <span class="text-[#0a0a0a] font-bold text-2xl group-hover:scale-110 transition-transform">?</span>
+  </button>
+
+  <!-- FAQ Modal -->
+  <div id="faq-modal-overlay" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-[#0a0a0a]/90 backdrop-blur-xl transition-opacity duration-500 opacity-0"
+      id="faq-modal-backdrop" onclick="closeFaqModal()"></div>
+
+    <!-- Modal Panel -->
+    <div
+      class="absolute inset-y-0 right-0 w-full md:w-[650px] bg-[#111111] shadow-2xl transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col border-l border-white/5"
+      id="faq-modal-panel">
+
+      <!-- Close Button -->
+      <button onclick="closeFaqModal()"
+        class="absolute top-6 right-6 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <div class="p-8 md:p-10 border-b border-white/10 shrink-0">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <span class="w-8 h-px bg-[#d4a574]"></span>
+          <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">FAQ</span>
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl text-white">Preguntas <span class="text-gradient">Frecuentes</span>
+        </h2>
+        <p class="text-white/50 mt-2">Formación 4D Body Massage</p>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-y-auto p-8 md:p-10">
+        <div class="space-y-6">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Qué es el 4D Body Massage?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4">Es un método profesional de trabajo corporal que actúa de forma integral
+                sobre:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Músculos</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Fascias</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Articulaciones</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Sistema linfático</li>
+              </ul>
+              <p class="text-white/70">Incluye técnicas manuales, estiramientos, movilización articular y trabajo sobre
+                la movilidad del cuerpo.</p>
+              <p class="text-white/70 mt-3">No es un masaje de relajación. Es una estructura clara de trabajo
+                profesional orientada a resultados.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Para quién es esta formación?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4">Está dirigida a:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Masajistas con formación básica
+                </li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Profesionales que quieren
+                  entender mejor el cuerpo</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Especialistas que buscan
+                  mejorar su técnica</li>
+              </ul>
+              <p class="text-white/60 italic">No es para principiantes desde cero. Es una especialización profesional.
+              </p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿El curso es presencial u online?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4">Es <strong class="text-white">100% online</strong>.</p>
+              <p class="text-white/70 mb-3">Todo se imparte a través de Telegram:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Teoría</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Vídeos prácticos</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Explicaciones paso a paso</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Grupo con otros estudiantes
+                </li>
+              </ul>
+              <p class="text-white/60 italic">Estudias a tu ritmo.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Cuánto dura la formación?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4">El acompañamiento activo dura <strong class="text-white">3 meses</strong>.
+              </p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> El acceso a los materiales se
+                  mantiene</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Puedes quedarte en el grupo sin
+                  límite</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> El contenido se actualiza
+                  regularmente</li>
+              </ul>
+              <p class="text-white/60 italic">No es un curso puntual. Es un sistema de aprendizaje vivo.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Qué incluye la formación?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-3">Incluye:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Base teórica</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Vídeos detallados de técnicas
+                </li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Trabajo con músculos, fascias,
+                  articulaciones y sistema linfático</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Estiramientos y movilización
+                  articular</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Estructura de una sesión de
+                  masaje</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">✔</span> Matices profesionales de la
+                  práctica real</li>
+              </ul>
+              <p class="text-white/70 mb-3">También:</p>
+              <ul class="space-y-2 text-white/70">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Organización del trabajo
+                  (cabina o domicilio)</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Comunicación con el cliente
+                </li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Límites y ética profesional
+                </li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Captación y fidelización de
+                  clientes</li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Puedo enviar vídeos para que me corrijas?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4"><strong class="text-white">Sí.</strong></p>
+              <p class="text-white/70 mb-3">Grabas tu práctica y me envías el vídeo. Yo:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Analizo la técnica</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Te doy correcciones</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Te explico qué mejorar y cómo
+                </li>
+              </ul>
+              <p class="text-white/60 italic">Esta parte es clave en el proceso de aprendizaje.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 7 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Hay certificado al terminar?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-4"><strong class="text-white">Sí</strong>, se entrega certificado al finalizar.
+              </p>
+              <div class="bg-[#d4a574]/10 border border-[#d4a574]/20 rounded-xl p-4 mb-4">
+                <p class="text-white/80"><strong class="text-[#d4a574]">⚠️ Importante:</strong><br>No es un certificado
+                  oficial ni acreditado a nivel estatal o médico.</p>
+              </div>
+              <p class="text-white/70 mb-3">Soy profesora certificada por la <strong class="text-white">International
+                  Massage Association (IMA)</strong>. En esta formación comparto mi experiencia y mi método.</p>
+              <p class="text-white/60 italic">El certificado confirma que has completado la formación en mi sistema.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 8 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Necesito formación médica?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-3"><strong class="text-white">No.</strong></p>
+              <p class="text-white/70">Esta formación no es médica. No enseña diagnóstico ni tratamiento. Está pensada
+                para masajistas y profesionales del trabajo corporal.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 9 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Puedo aplicarlo con clientes?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70 mb-3"><strong class="text-white">Sí.</strong></p>
+              <p class="text-white/70 mb-3">El método se puede aplicar en:</p>
+              <ul class="space-y-2 text-white/70 mb-4">
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Cabina</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> Domicilio</li>
+                <li class="flex items-start gap-2"><span class="text-[#d4a574]">•</span> SPA</li>
+              </ul>
+              <p class="text-white/60 italic">Aprendes a analizar el cuerpo y construir sesiones. No solo a repetir
+                movimientos.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 10 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Incluye drenaje linfático?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70"><strong class="text-white">Sí</strong>, como parte del sistema. El drenaje se
+                integra en el trabajo global con tejidos, movilidad y circulación.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 11 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Es un masaje relajante?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70"><strong class="text-white">No.</strong> Es un masaje profesional estructurado
+                enfocado en la funcionalidad y calidad del trabajo corporal.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 12 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿En qué idioma es el curso?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-white/70">Todo el curso está en <strong class="text-white">español</strong>. Explicaciones
+                claras y profesionales.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 13 -->
+          <div class="faq-item border border-white/5 rounded-2xl overflow-hidden">
+            <button onclick="toggleFaq(this)"
+              class="w-full p-6 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors">
+              <span class="font-serif text-lg text-white pr-4">¿Cómo me inscribo?</span>
+              <svg class="w-5 h-5 text-[#d4a574] shrink-0 faq-icon transition-transform duration-300" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <ol class="space-y-3 text-white/70 mb-4">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-[#d4a574] text-[#0a0a0a] rounded-full flex items-center justify-center text-sm font-bold shrink-0">1</span>
+                  <span>Eliges la formación</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-[#d4a574] text-[#0a0a0a] rounded-full flex items-center justify-center text-sm font-bold shrink-0">2</span>
+                  <span>Recibes el enlace de pago</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-6 h-6 bg-[#d4a574] text-[#0a0a0a] rounded-full flex items-center justify-center text-sm font-bold shrink-0">3</span>
+                  <span>Tras pagar accedes al contenido en Telegram</span>
+                </li>
+              </ol>
+              <p class="text-white/60 italic">Antes de pagar puedes escribirme para resolver cualquier duda.</p>
+              <div class="mt-4 pt-4 border-t border-white/10">
+                <p class="text-white/50 text-sm mb-2">¿Tienes dudas? Escríbenos:</p>
+                <a href="https://wa.me/34624464930" target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/30 rounded-full text-[#25D366] text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  +34 624 464 930
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-6 md:p-8 border-t border-white/10 bg-[#0a0a0a]">
+        <a href="#courses" onclick="closeFaqModal()"
+          class="block w-full bg-gradient-to-r from-[#d4a574] to-[#c4956a] text-[#0a0a0a] text-center py-5 font-bold tracking-[0.15em] uppercase text-sm rounded-full hover:shadow-xl hover:shadow-[#d4a574]/20 transition-all duration-300 btn-premium">
+          Ver Cursos Disponibles
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Modal -->
+  <div id="legal-modal-overlay" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-[#0a0a0a]/90 backdrop-blur-xl transition-opacity duration-500 opacity-0"
+      id="legal-modal-backdrop" onclick="closeLegalModal()"></div>
+
+    <!-- Modal Panel -->
+    <div
+      class="absolute inset-y-0 right-0 w-full md:w-[700px] bg-[#111111] shadow-2xl transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col border-l border-white/5"
+      id="legal-modal-panel">
+
+      <!-- Close Button -->
+      <button onclick="closeLegalModal()"
+        class="absolute top-6 right-6 z-20 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <div class="p-8 md:p-10 border-b border-white/10 shrink-0">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <span class="w-8 h-px bg-[#d4a574]"></span>
+          <span class="text-[#d4a574] text-xs font-semibold tracking-[0.3em] uppercase">Legal</span>
+        </div>
+        <h2 id="legal-modal-title" class="font-serif text-3xl md:text-4xl text-white">Aviso Legal</h2>
+      </div>
+
+      <!-- Scrollable Content -->
+      <div class="flex-1 overflow-y-auto p-8 md:p-10">
+        <div id="legal-modal-content" class="prose prose-invert prose-lg text-white/70 font-light leading-relaxed">
+          <!-- Dynamic Content -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-6 md:p-8 border-t border-white/10 bg-[#0a0a0a]">
+        <button onclick="closeLegalModal()"
+          class="block w-full bg-white/5 hover:bg-white/10 text-white text-center py-4 font-medium tracking-wide text-sm rounded-full transition-all duration-300 border border-white/10">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // LEGAL MODAL LOGIC
+    const legalModalOverlay = document.getElementById('legal-modal-overlay')
+    const legalModalBackdrop = document.getElementById('legal-modal-backdrop')
+    const legalModalPanel = document.getElementById('legal-modal-panel')
+    const legalModalTitle = document.getElementById('legal-modal-title')
+    const legalModalContent = document.getElementById('legal-modal-content')
+
+    const legalTexts = {
+      'aviso-legal': {
+        title: 'Aviso Legal',
+        content: `
+                    <h3 class="font-serif text-xl text-white mb-4">1. Datos identificativos</h3>
+                    <p class="mb-4">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa a los usuarios de los datos del titular de este sitio web:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li><strong class="text-white">Titular:</strong> [NOMBRE COMPLETO O RAZÓN SOCIAL]</li>
+                        <li><strong class="text-white">NIE/DNI/CIF:</strong> [NÚMERO DE IDENTIFICACIÓN]</li>
+                        <li><strong class="text-white">Domicilio:</strong> [DIRECCIÓN COMPLETA]</li>
+                        <li><strong class="text-white">Email:</strong> [EMAIL DE CONTACTO]</li>
+                        <li><strong class="text-white">Teléfono:</strong> +34 624 464 930</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">2. Objeto</h3>
+                    <p class="mb-4">Este sitio web tiene como finalidad la promoción y venta de cursos de formación profesional en masaje. El titular se reserva el derecho a modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">3. Propiedad intelectual</h3>
+                    <p class="mb-4">Todos los contenidos de este sitio web (textos, fotografías, gráficos, imágenes, tecnología, software, así como su diseño gráfico y códigos fuente) constituyen una obra cuya propiedad pertenece al titular, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso del sitio web.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">4. Legislación aplicable y jurisdicción</h3>
+                    <p class="mb-4">La relación entre el titular y el usuario se regirá por la normativa española vigente. Todas las disputas y reclamaciones derivadas de este aviso legal se resolverán por los juzgados y tribunales españoles.</p>
+
+                    <p class="text-white/50 text-sm mt-8">Última actualización: Enero 2025</p>
+                `
+      },
+      'politica-privacidad': {
+        title: 'Política de Privacidad',
+        content: `
+                    <h3 class="font-serif text-xl text-white mb-4">1. Responsable del tratamiento</h3>
+                    <ul class="space-y-2 mb-6">
+                        <li><strong class="text-white">Identidad:</strong> [NOMBRE COMPLETO O RAZÓN SOCIAL]</li>
+                        <li><strong class="text-white">NIE/DNI/CIF:</strong> [NÚMERO DE IDENTIFICACIÓN]</li>
+                        <li><strong class="text-white">Dirección:</strong> [DIRECCIÓN COMPLETA]</li>
+                        <li><strong class="text-white">Email:</strong> [EMAIL DE CONTACTO]</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">2. Finalidad del tratamiento</h3>
+                    <p class="mb-4">Los datos personales que nos facilites serán tratados con las siguientes finalidades:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• Gestionar la compra de cursos y servicios</li>
+                        <li>• Proporcionar acceso a los contenidos adquiridos</li>
+                        <li>• Enviar comunicaciones relacionadas con tu compra</li>
+                        <li>• Atender consultas y solicitudes</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">3. Legitimación</h3>
+                    <p class="mb-4">La base legal para el tratamiento de tus datos es:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• La ejecución del contrato de compraventa</li>
+                        <li>• Tu consentimiento expreso</li>
+                        <li>• El interés legítimo del responsable</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">4. Destinatarios</h3>
+                    <p class="mb-4">Tus datos podrán ser comunicados a:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• <strong class="text-white">Stripe, Inc.</strong> - Procesador de pagos (cumple con RGPD y Privacy Shield)</li>
+                        <li>• Administraciones públicas cuando sea requerido por ley</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">5. Derechos del usuario</h3>
+                    <p class="mb-4">Tienes derecho a:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• Acceder a tus datos personales</li>
+                        <li>• Rectificar los datos inexactos</li>
+                        <li>• Solicitar la supresión de tus datos</li>
+                        <li>• Oponerte al tratamiento</li>
+                        <li>• Solicitar la limitación del tratamiento</li>
+                        <li>• Solicitar la portabilidad de los datos</li>
+                    </ul>
+                    <p class="mb-4">Para ejercer estos derechos, puedes contactarnos en: <strong class="text-white">[EMAIL DE CONTACTO]</strong></p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">6. Conservación de datos</h3>
+                    <p class="mb-4">Los datos se conservarán mientras dure la relación comercial y durante el tiempo necesario para cumplir con las obligaciones legales.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">7. Seguridad</h3>
+                    <p class="mb-4">Aplicamos medidas de seguridad técnicas y organizativas para proteger tus datos personales conforme al RGPD (Reglamento General de Protección de Datos) y la LOPDGDD.</p>
+
+                    <p class="text-white/50 text-sm mt-8">Última actualización: Enero 2025</p>
+                `
+      },
+      'terminos-condiciones': {
+        title: 'Términos y Condiciones',
+        content: `
+                    <h3 class="font-serif text-xl text-white mb-4">1. Información general</h3>
+                    <p class="mb-4">Estos términos y condiciones regulan la compra de cursos de formación online ofrecidos a través de este sitio web.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li><strong class="text-white">Vendedor:</strong> [NOMBRE COMPLETO O RAZÓN SOCIAL]</li>
+                        <li><strong class="text-white">NIE/DNI/CIF:</strong> [NÚMERO DE IDENTIFICACIÓN]</li>
+                        <li><strong class="text-white">Dirección:</strong> [DIRECCIÓN COMPLETA]</li>
+                        <li><strong class="text-white">Email:</strong> [EMAIL DE CONTACTO]</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">2. Precio e impuestos</h3>
+                    <p class="mb-4">Todos los precios mostrados en este sitio web <strong class="text-white">incluyen el IVA</strong> (Impuesto sobre el Valor Añadido) cuando sea aplicable. El precio final será el indicado en el momento de la compra.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">3. Proceso de compra</h3>
+                    <p class="mb-4">El proceso de compra es el siguiente:</p>
+                    <ol class="space-y-2 mb-6 list-decimal pl-5">
+                        <li>Selecciona el curso deseado</li>
+                        <li>Realiza el pago a través de Stripe (pasarela de pago segura)</li>
+                        <li>Tras confirmar el pago, serás redirigido a una página de confirmación</li>
+                        <li>Contacta por Instagram para recibir acceso al contenido</li>
+                    </ol>
+
+                    <h3 class="font-serif text-xl text-white mb-4">4. Entrega del producto digital</h3>
+                    <p class="mb-4">El acceso al curso se proporcionará a través de un grupo privado de Telegram. Una vez realizado el pago, deberás contactar por Instagram (@experta_en_masaje) indicando tu email de pago para recibir el acceso.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">5. Derecho de desistimiento</h3>
+                    <div class="bg-[#d4a574]/10 border border-[#d4a574]/20 rounded-xl p-4 mb-6">
+                        <p class="text-white/90"><strong class="text-[#d4a574]">⚠️ Importante:</strong></p>
+                        <p class="mt-2">De conformidad con el artículo 103.m) del Real Decreto Legislativo 1/2007, el derecho de desistimiento <strong class="text-white">no será aplicable</strong> al suministro de contenido digital que no se preste en un soporte material cuando la ejecución haya comenzado con el previo consentimiento expreso del consumidor.</p>
+                    </div>
+                    <p class="mb-4">Al realizar la compra y solicitar acceso al contenido, el usuario acepta que:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• Consiente expresamente el inicio de la prestación del servicio</li>
+                        <li>• Reconoce que pierde su derecho de desistimiento una vez acceda al contenido</li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-white mb-4">6. Propiedad intelectual</h3>
+                    <p class="mb-4">Todo el contenido de los cursos (vídeos, textos, imágenes, materiales) está protegido por derechos de propiedad intelectual. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">7. Limitación de responsabilidad</h3>
+                    <p class="mb-4">Los cursos ofrecidos son de carácter formativo y no sustituyen formación oficial ni acreditación profesional. El certificado emitido acredita la finalización de la formación impartida, pero no constituye titulación oficial.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">8. Modificaciones</h3>
+                    <p class="mb-4">Nos reservamos el derecho de modificar estos términos y condiciones. Los cambios serán efectivos desde su publicación en el sitio web.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">9. Ley aplicable</h3>
+                    <p class="mb-4">Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de España.</p>
+
+                    <h3 class="font-serif text-xl text-white mb-4">10. Contacto</h3>
+                    <p class="mb-4">Para cualquier consulta relacionada con estos términos:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li>• <strong class="text-white">Email:</strong> [EMAIL DE CONTACTO]</li>
+                        <li>• <strong class="text-white">WhatsApp:</strong> +34 624 464 930</li>
+                        <li>• <strong class="text-white">Instagram:</strong> @experta_en_masaje</li>
+                    </ul>
+
+                    <p class="text-white/50 text-sm mt-8">Última actualización: Enero 2025</p>
+                `
+      }
+    }
+
+    function openLegalModal(type) {
+      const legal = legalTexts[type]
+      if (!legal) return
+
+      legalModalTitle.innerText = legal.title
+      legalModalContent.innerHTML = legal.content
+
+      legalModalOverlay.classList.remove('hidden')
+      setTimeout(() => {
+        legalModalBackdrop.classList.remove('opacity-0')
+        legalModalPanel.classList.remove('translate-x-full')
+      }, 10)
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeLegalModal() {
+      legalModalBackdrop.classList.add('opacity-0')
+      legalModalPanel.classList.add('translate-x-full')
+      setTimeout(() => {
+        legalModalOverlay.classList.add('hidden')
+        document.body.style.overflow = ''
+      }, 500)
+    }
+
+    // FAQ MODAL LOGIC
+    const faqModalOverlay = document.getElementById('faq-modal-overlay')
+    const faqModalBackdrop = document.getElementById('faq-modal-backdrop')
+    const faqModalPanel = document.getElementById('faq-modal-panel')
+
+    function openFaqModal() {
+      faqModalOverlay.classList.remove('hidden')
+      setTimeout(() => {
+        faqModalBackdrop.classList.remove('opacity-0')
+        faqModalPanel.classList.remove('translate-x-full')
+      }, 10)
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeFaqModal() {
+      faqModalBackdrop.classList.add('opacity-0')
+      faqModalPanel.classList.add('translate-x-full')
+      setTimeout(() => {
+        faqModalOverlay.classList.add('hidden')
+        document.body.style.overflow = ''
+      }, 500)
+    }
+
+    function toggleFaq(button) {
+      const content = button.nextElementSibling
+      const icon = button.querySelector('.faq-icon')
+      const isOpen = !content.classList.contains('hidden')
+
+      // Close all other FAQs
+      document.querySelectorAll('.faq-content').forEach(c => {
+        if (c !== content) {
+          c.classList.add('hidden')
+          c.previousElementSibling.querySelector('.faq-icon').classList.remove('rotate-180')
+        }
+      })
+
+      // Toggle current FAQ
+      if (isOpen) {
+        content.classList.add('hidden')
+        icon.classList.remove('rotate-180')
+      } else {
+        content.classList.remove('hidden')
+        icon.classList.add('rotate-180')
+      }
+    }
+
+    // DATA - UPCOMING COURSES (PRONTO)
+    const upcomingCourses = [
+      {
+        id: 101,
+        title: "Fitness Massage",
+        tag: "Próximamente",
+        price: "Pronto",
+        description: `
+                    <p class="mb-4 text-white/90 font-medium">Técnicas especializadas de masaje para deportistas y personas activas.</p>
+                    <p class="mb-4 text-white/70">Un enfoque profesional basado en la fisiología del movimiento y la recuperación muscular.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">Próximamente disponible</h4>
+                    <p class="text-white/60">Este curso está actualmente en desarrollo. Mantente atento para más información.</p>
+                `,
+        link: "#"
+      },
+      {
+        id: 102,
+        title: "Masaje Facial",
+        tag: "Próximamente",
+        price: "Pronto",
+        description: `
+                    <p class="mb-4 text-white/90 font-medium">Técnicas faciales basadas en anatomía y fisiología real de los tejidos.</p>
+                    <p class="mb-4 text-white/70">Aprende a trabajar los músculos faciales con precisión y resultados visibles.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">Próximamente disponible</h4>
+                    <p class="text-white/60">Este curso está actualmente en desarrollo. Mantente atento para más información.</p>
+                `,
+        link: "#"
+      },
+      {
+        id: 103,
+        title: "Masaje para Niños y Padres",
+        tag: "Próximamente",
+        price: "Pronto",
+        description: `
+                    <p class="mb-4 text-white/90 font-medium">Técnicas de masaje adaptadas para el trabajo con niños y orientación para padres.</p>
+                    <p class="mb-4 text-white/70">Un curso especial que enseña cómo aplicar el masaje de forma segura y efectiva en los más pequeños.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">Próximamente disponible</h4>
+                    <p class="text-white/60">Este curso está actualmente en desarrollo. Mantente atento para más información.</p>
+                `,
+        link: "#"
+      },
+      {
+        id: 104,
+        title: "Preparación para Campeonato de Masaje",
+        tag: "Próximamente",
+        price: "Pronto",
+        description: `
+                    <p class="mb-4 text-white/90 font-medium">Todo lo que necesitas saber para prepararte y competir en campeonatos de masaje profesional.</p>
+                    <p class="mb-4 text-white/70">Aprende de una campeona las técnicas, la presentación y los criterios de evaluación.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">Próximamente disponible</h4>
+                    <p class="text-white/60">Este curso está actualmente en desarrollo. Mantente atento para más información.</p>
+                `,
+        link: "#"
+      }
+    ]
+
+    // DATA
+    const courses = [
+      {
+        id: 1,
+        title: "4D Body Massage",
+        image: "https://i.ibb.co/fzXNTKsr/5929252079719354037.jpg",
+        tag: "Fisiología Avanzada",
+        price: "290 €",
+        description: `
+                    <p class="mb-4 text-white/90 font-medium">El 4D Body Massage es un sistema de trabajo corporal basado en la fisiología y la funcionalidad real del cuerpo.</p>
+                    <p class="mb-4 text-white/70">Se llama 4D porque integra cuatro sistemas del organismo en una sola sesión. No es un masaje intuitivo ni energético, es un método lógico y estructurado.</p>
+
+                    <div class="bg-gradient-to-r from-[#d4a574]/10 to-transparent p-6 border-l-2 border-[#d4a574] mb-6 rounded-r-lg">
+                        <p class="text-white font-semibold mb-3">4D Body Massage no es un curso para "comprar vídeos y mirar".</p>
+                        <p class="text-white/80 italic">Es un proceso de acompañamiento.</p>
+                    </div>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">Durante el curso no estás solo/a:</h4>
+                    <ul class="space-y-3 list-none pl-0 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-xl">📩</span>
+                            <span class="text-white/70">Estoy en contacto contigo</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-xl">🎥</span>
+                            <span class="text-white/70">Puedes enviarme tus prácticas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-xl">✍️</span>
+                            <span class="text-white/70">Recibirás correcciones técnicas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-xl">🔄</span>
+                            <span class="text-white/70">Tendrás acceso continuo a nueva información</span>
+                        </li>
+                    </ul>
+
+                    <h4 class="font-serif text-xl text-white mt-8 mb-4">El método integra 4 sistemas del cuerpo:</h4>
+                    <ul class="space-y-4 list-none pl-0">
+                        <li class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                            <span class="text-2xl">💪</span>
+                            <div><strong class="text-white">1. Músculos</strong><br><span class="text-white/70">Mejora de la elasticidad, la fuerza y el equilibrio funcional.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                            <span class="text-2xl">🔄</span>
+                            <div><strong class="text-white">2. Articulaciones</strong><br><span class="text-white/70">Trabajo orientado a la libertad y calidad del movimiento, no al dolor.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                            <span class="text-2xl">🧬</span>
+                            <div><strong class="text-white">3. Fascias</strong><br><span class="text-white/70">Para mejorar el deslizamiento de los tejidos y liberar fijaciones y compensaciones.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                            <span class="text-2xl">💧</span>
+                            <div><strong class="text-white">4. Sistema linfático</strong><br><span class="text-white/70">No es un drenaje clásico, sino una integración funcional dentro del trabajo corporal.</span></div>
+                        </li>
+                    </ul>
+
+                    <h4 class="font-serif text-xl text-white mt-8 mb-4">El curso incluye:</h4>
+                    <ul class="space-y-2 list-none pl-0 text-white/70 mb-6">
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">✅</span> Base teórica clara y profesional</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">✅</span> Práctica con lógica y comprensión del cuerpo</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">✅</span> Organización del trabajo del masajista</li>
+                    </ul>
+
+                    <h4 class="font-serif text-xl text-white mt-8 mb-4">Para quién es</h4>
+                    <p class="mb-4 text-white/70">Para masajistas que ya trabajan y quieren dejar de improvisar, unir técnica con criterio y obtener resultados claros.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-8 mb-4">Qué aprenderás</h4>
+                    <ul class="space-y-2 list-none pl-0 text-white/70">
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">•</span> Integrar los cuatro sistemas en una sesión</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">•</span> Leer el estado real del cuerpo</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">•</span> Ajustar la intensidad según cada cliente</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">•</span> Trabajar con precisión y menos desgaste</li>
+                        <li class="flex items-start gap-3"><span class="text-[#d4a574]">•</span> Estructurar sesiones coherentes y eficaces</li>
+                    </ul>
+
+                    <h4 class="font-serif text-xl text-white mt-8 mb-4">Resultado</h4>
+                    <p class="text-white/80 bg-white/5 p-4 border-l-2 border-[#d4a574] italic rounded-r-lg">Sesiones más claras y efectivas, clientes que responden mejor y un masaje que deja de ser una suma de técnicas para convertirse en un sistema profesional que funciona.</p>
+                `,
+        link: "https://buy.stripe.com/7sY8wPeaZccYaXSgknfYY03"
+      },
+      {
+        id: 2,
+        title: "Instagram para masajistas",
+        image: "instagram.jpg",
+        tag: "Negocio Profesional",
+        price: "90 €",
+        description: `
+                    <p class="mb-4 font-medium text-lg text-white/90">Aprende a usar Instagram rápido y sin complicaciones.</p>
+                    <p class="mb-6 text-white/70">En 15 minutos crearás Reels sin grabarte, sin voz, sin sonido y sin vídeos complejos.</p>
+
+                    <div class="bg-white/5 p-6 border-l-2 border-[#d4a574] mb-6 rounded-r-lg">
+                        <p class="italic text-white/90 font-medium text-lg leading-relaxed">"Contenido simple, profesional y efectivo, que se guarda, se comparte y atrae clientes reales, sin pagar publicidad."</p>
+                    </div>
+
+                    <p class="text-[#d4a574] font-bold uppercase tracking-wide text-xs">Este curso es para masajistas que quieren resultados.</p>
+                `,
+        link: "https://buy.stripe.com/bJedR97MBccYd603xBfYY07"
+      },
+      {
+        id: 3,
+        title: "Organización a Domicilio",
+        image: "organizacion.jpg",
+        tag: "Mini-Curso",
+        price: "19 €",
+        description: `
+                    <p class="mb-4 font-medium text-lg text-white/90">Trabajar a domicilio no es improvisar. Es trasladar tu profesionalismo al espacio del cliente.</p>
+
+                    <h4 class="font-serif text-xl text-white mt-6 mb-4">En este mini-curso aprenderás:</h4>
+                    <ul class="space-y-3 list-none pl-0 mb-6">
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#d4a574] text-xl">✔️</span>
+                            <span class="text-white/70">Cómo organizar una sesión en casa del cliente</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#d4a574] text-xl">✔️</span>
+                            <span class="text-white/70">Protocolos claros, higiene y límites profesionales</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#d4a574] text-xl">✔️</span>
+                            <span class="text-white/70">Qué llevar y cómo comportarte</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#d4a574] text-xl">✔️</span>
+                            <span class="text-white/70">Check-lists listos para usar</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-white/5 p-6 border-l-2 border-[#d4a574] italic text-white/80 rounded-r-lg">
+                        "Este mini-curso es práctico, claro y aplicable desde el primer día."
+                    </div>
+                `,
+        link: "https://buy.stripe.com/28E3cvgj790M1nid8bfYY0f"
+      }
+    ]
+
+    // RENDER COURSES
+    const container = document.getElementById('lessons-container')
+
+    container.innerHTML = courses.map((course, index) => `
+            <div class="course-card group cursor-pointer reveal" style="transition-delay: ${index * 100}ms" onclick="openModal(${course.id})">
+                <div class="relative bg-[#111111] rounded-3xl overflow-hidden border border-white/5 hover:border-[#d4a574]/30 transition-all duration-500">
+
+                    <!-- Image Container -->
+                    <div class="relative overflow-hidden aspect-[4/5]">
+                        <img id="course-img-${course.id}" src="${course.image}" alt="${course.title}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/30 to-transparent"></div>
+
+                        <!-- Tag -->
+                        <span class="absolute top-5 left-5 bg-[#d4a574]/20 backdrop-blur-md px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#d4a574] rounded-full border border-[#d4a574]/30">
+                            ${course.tag}
+                        </span>
+
+                        <!-- Price Badge -->
+                        <div class="absolute top-5 right-5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full">
+                            <span class="font-serif text-xl text-white">${course.price}</span>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-white group-hover:text-[#d4a574] transition-colors mb-3">${course.title}</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-white/40 uppercase tracking-widest group-hover:text-white/60 transition-colors">Ver Programa</span>
+                            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574] transition-all duration-300">
+                                <svg class="w-5 h-5 text-white/50 group-hover:text-[#0a0a0a] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('')
+
+    // MODAL LOGIC
+    const modalOverlay = document.getElementById('modal-overlay')
+    const modalBackdrop = document.getElementById('modal-backdrop')
+    const modalPanel = document.getElementById('modal-panel')
+
+    function openModal(id) {
+      const course = courses.find(c => c.id === id)
+      if (!course) return
+
+      document.getElementById('modal-image').src = course.image
+      document.getElementById('modal-tag').innerText = course.tag
+      document.getElementById('modal-title').innerText = course.title
+      document.getElementById('modal-price').innerText = course.price
+      document.getElementById('modal-description').innerHTML = course.description
+      document.getElementById('modal-buy-link').href = course.link
+
+      modalOverlay.classList.remove('hidden')
+      setTimeout(() => {
+        modalBackdrop.classList.remove('opacity-0')
+        modalPanel.classList.remove('translate-x-full')
+      }, 10)
+
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeModal() {
+      const buyLink = document.getElementById('modal-buy-link')
+      buyLink.innerHTML = 'Inscribirse al Curso'
+      buyLink.classList.remove('opacity-50', 'pointer-events-none')
+
+      modalBackdrop.classList.add('opacity-0')
+      modalPanel.classList.add('translate-x-full')
+
+      setTimeout(() => {
+        modalOverlay.classList.add('hidden')
+        document.body.style.overflow = ''
+      }, 500)
+    }
+
+    // MOBILE MENU
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn')
+    const mobileMenu = document.getElementById('mobile-menu')
+    let menuOpen = false
+
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen
+      if (menuOpen) {
+        mobileMenu.classList.remove('translate-x-full')
+      } else {
+        mobileMenu.classList.add('translate-x-full')
+      }
+    })
+
+    function closeMobileMenu() {
+      menuOpen = false
+      mobileMenu.classList.add('translate-x-full')
+    }
+
+    // NAVIGATION SCROLL EFFECT
+    const navbar = document.getElementById('navbar')
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-[#0a0a0a]/90', 'backdrop-blur-xl', 'border-b', 'border-white/5')
+        navbar.classList.remove('py-5')
+        navbar.classList.add('py-3')
+      } else {
+        navbar.classList.remove('bg-[#0a0a0a]/90', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-3')
+        navbar.classList.add('py-5')
+      }
+    })
+
+    // REVEAL ANIMATION ON SCROLL
+    const revealElements = document.querySelectorAll('.reveal')
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+        }
+      })
+    }, { threshold: 0.1 })
+
+    revealElements.forEach(el => revealObserver.observe(el))
+
+    // Keyboard accessibility for modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
+        closeModal()
+      }
+      if (e.key === 'Escape' && !prontoModalOverlay.classList.contains('hidden')) {
+        closeProntoModal()
+      }
+      if (e.key === 'Escape' && !faqModalOverlay.classList.contains('hidden')) {
+        closeFaqModal()
+      }
+      if (e.key === 'Escape' && !legalModalOverlay.classList.contains('hidden')) {
+        closeLegalModal()
+      }
+    })
+
+    // PRONTO MODAL LOGIC
+    const prontoModalOverlay = document.getElementById('pronto-modal-overlay')
+    const prontoModalBackdrop = document.getElementById('pronto-modal-backdrop')
+    const prontoModalPanel = document.getElementById('pronto-modal-panel')
+    const prontoCoursesContainer = document.getElementById('pronto-courses-container')
+
+    // Render upcoming courses in Pronto modal with blurred background style
+    prontoCoursesContainer.innerHTML = upcomingCourses.map((course, index) => `
+            <div class="group cursor-pointer" onclick="openUpcomingCourseModal(${course.id})">
+                <div class="relative bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5 hover:border-[#d4a574]/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+
+                    <!-- Blurred Background with Pronto Text -->
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <!-- Gradient background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-[#1a1a1a]"></div>
+
+                        <!-- Animated orbs -->
+                        <div class="absolute top-1/4 left-1/4 w-24 h-24 bg-[#d4a574]/10 rounded-full blur-3xl animate-pulse"></div>
+                        <div class="absolute bottom-1/4 right-1/4 w-32 h-32 bg-[#d4a574]/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+
+                        <!-- Pronto Text Centered -->
+                        <div class="absolute inset-0 flex items-center justify-center backdrop-blur-sm">
+                            <span class="font-serif text-5xl md:text-6xl text-white/20 group-hover:text-white/30 transition-colors">Pronto</span>
+                        </div>
+
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+
+                        <!-- Tag -->
+                        <span class="absolute top-4 left-4 bg-white/10 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white rounded-full border border-white/20">
+                            ${course.tag}
+                        </span>
+
+                        <!-- Price Badge -->
+                        <div class="absolute top-4 right-4 bg-[#d4a574]/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#d4a574]/30">
+                            <span class="font-serif text-lg text-[#d4a574]">${course.price}</span>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5">
+                        <h3 class="font-serif text-xl text-white group-hover:text-[#d4a574] transition-colors mb-2">${course.title}</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-white/40 uppercase tracking-widest group-hover:text-white/60 transition-colors">Ver detalles</span>
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#d4a574] transition-all duration-300">
+                                <svg class="w-4 h-4 text-white/50 group-hover:text-[#0a0a0a] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('')
+
+    function openProntoModal() {
+      prontoModalOverlay.classList.remove('hidden')
+      setTimeout(() => {
+        prontoModalBackdrop.classList.remove('opacity-0')
+        prontoModalPanel.classList.remove('opacity-0', 'scale-95')
+        prontoModalPanel.classList.add('opacity-100', 'scale-100')
+      }, 10)
+
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeProntoModal() {
+      prontoModalBackdrop.classList.add('opacity-0')
+      prontoModalPanel.classList.add('opacity-0', 'scale-95')
+      prontoModalPanel.classList.remove('opacity-100', 'scale-100')
+
+      setTimeout(() => {
+        prontoModalOverlay.classList.add('hidden')
+        document.body.style.overflow = ''
+      }, 500)
+    }
+
+    function openUpcomingCourseModal(id) {
+      const course = upcomingCourses.find(c => c.id === id)
+      if (!course) return
+
+      // Close Pronto modal first
+      closeProntoModal()
+
+      // Open course detail modal after a short delay
+      setTimeout(() => {
+        // Create a blurred background placeholder for the modal image
+        const modalImageContainer = document.getElementById('modal-image').parentElement
+        document.getElementById('modal-image').style.display = 'none'
+
+        // Check if placeholder already exists
+        let placeholder = document.getElementById('modal-image-placeholder')
+        if (!placeholder) {
+          placeholder = document.createElement('div')
+          placeholder.id = 'modal-image-placeholder'
+          placeholder.className = 'absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-[#1a1a1a] flex items-center justify-center'
+          placeholder.innerHTML = `
+                        <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-[#d4a574]/10 rounded-full blur-3xl animate-pulse"></div>
+                        <div class="absolute bottom-1/4 right-1/4 w-40 h-40 bg-[#d4a574]/5 rounded-full blur-3xl animate-pulse"></div>
+                        <span class="font-serif text-6xl text-white/20 relative z-10">Pronto</span>
+                    `
+          modalImageContainer.insertBefore(placeholder, modalImageContainer.firstChild)
+        }
+        placeholder.style.display = 'flex'
+
+        document.getElementById('modal-tag').innerText = course.tag
+        document.getElementById('modal-title').innerText = course.title
+        document.getElementById('modal-price').innerText = course.price
+        document.getElementById('modal-description').innerHTML = course.description
+
+        // Change button text for upcoming courses
+        const buyLink = document.getElementById('modal-buy-link')
+        buyLink.href = course.link
+        buyLink.innerHTML = 'Próximamente Disponible'
+        buyLink.classList.add('opacity-50', 'pointer-events-none')
+
+        modalOverlay.classList.remove('hidden')
+        setTimeout(() => {
+          modalBackdrop.classList.remove('opacity-0')
+          modalPanel.classList.remove('translate-x-full')
+        }, 10)
+
+        document.body.style.overflow = 'hidden'
+      }, 550)
+    }
+
+    // Override closeModal to reset image visibility
+    const originalCloseModal = closeModal
+    closeModal = function () {
+      const buyLink = document.getElementById('modal-buy-link')
+      buyLink.innerHTML = 'Inscribirse al Curso'
+      buyLink.classList.remove('opacity-50', 'pointer-events-none')
+
+      // Reset image visibility
+      document.getElementById('modal-image').style.display = 'block'
+      const placeholder = document.getElementById('modal-image-placeholder')
+      if (placeholder) {
+        placeholder.style.display = 'none'
+      }
+
+      modalBackdrop.classList.add('opacity-0')
+      modalPanel.classList.add('translate-x-full')
+
+      setTimeout(() => {
+        modalOverlay.classList.add('hidden')
+        document.body.style.overflow = ''
+      }, 500)
+    }
+  </script>
 </body>
 
 </html>
